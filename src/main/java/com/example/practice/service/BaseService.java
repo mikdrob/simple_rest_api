@@ -13,7 +13,7 @@ public abstract class BaseService<TEntity extends BaseEntity<TEntity>> {
         this.baseRepository = baseRepository;
     }
 
-    public List<TEntity> getAll() {
+    public List<TEntity> GetAll() {
         return baseRepository.findAll();
     }
 
@@ -21,4 +21,6 @@ public abstract class BaseService<TEntity extends BaseEntity<TEntity>> {
     public TEntity Add(TEntity entity) {
         return baseRepository.save(entity);
     }
+
+
 }

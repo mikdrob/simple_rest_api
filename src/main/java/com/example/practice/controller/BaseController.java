@@ -20,12 +20,12 @@ public abstract class BaseController<TEntity extends BaseEntity<TEntity>>{
         };
     }
     @GetMapping
-    public ResponseEntity<List<TEntity>> getAll() {
-        return ResponseEntity.ok(service.getAll());
+    public ResponseEntity<List<TEntity>> GetAll() {
+        return ResponseEntity.ok(service.GetAll());
     }
 
     @PostMapping
-    public ResponseEntity<TEntity> postPerson(@Valid @RequestBody TEntity entity) {
+    public ResponseEntity<TEntity> Post(@Valid @RequestBody TEntity entity) {
         return ResponseEntity.ok(service.Add(entity));
     }
 }

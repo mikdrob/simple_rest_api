@@ -12,8 +12,8 @@ import java.util.List;
 public class PersonService {
     private final PersonRepository personRepository;
 
-    public PersonService(PersonRepository baseRepository) {
-        this.personRepository = baseRepository;
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
     }
 
 
@@ -21,4 +21,6 @@ public class PersonService {
     public List<Person> getPersonByName(String name) {
         return personRepository.getPersonByName(name);
     }
+
+
 }
