@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Data
@@ -17,5 +18,6 @@ public class Person implements Serializable, BaseEntity<Person> {
 
     @Lob
     @Type(type = "org.hibernate.type.StringType")
+    @NotBlank(message = "Name is mandatory")
     private String name;
 }

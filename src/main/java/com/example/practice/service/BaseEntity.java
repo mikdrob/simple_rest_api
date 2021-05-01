@@ -1,5 +1,3 @@
 package com.example.practice.service;
 
-public interface BaseEntity<T> {
-
-}
+public interface BaseEntity<TEntity> {}
