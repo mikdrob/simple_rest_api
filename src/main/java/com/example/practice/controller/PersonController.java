@@ -1,21 +1,20 @@
 package com.example.practice.controller;
 
-import com.example.practice.dto.Person;
-import com.example.practice.repository.BaseRepositoryBean;
+import com.example.practice.api.dto.v1.Person;
+import com.example.practice.repository.base.BaseRepositoryBean;
 import com.example.practice.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/index")
+@RequestMapping("/api/v1")
 public class PersonController extends BaseController<Person> {
 
     private final PersonService service;
+    private static final String pathToSearch= "person";
 
     @Autowired
     public PersonController(BaseRepositoryBean repository, PersonService service) {
@@ -23,9 +22,9 @@ public class PersonController extends BaseController<Person> {
         this.service = service;
     }
 
-    @GetMapping(path = "person")
-    public List<Person> getPersonByName(@RequestParam() String search){
-        return service.getPersonByName(search);
+    @GetMapping(path = {pathToSearch})
+    public ResponseEntity<List<Person>> getPersonByName(@RequestParam() String search){
+        return ResponseEntity.ok(service.getPersonByName(search));
     }
 
 

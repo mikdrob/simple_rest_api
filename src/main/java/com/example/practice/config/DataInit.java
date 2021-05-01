@@ -1,14 +1,21 @@
 package com.example.practice.config;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import com.example.practice.api.dto.v1.Person;
+import com.example.practice.repository.PersonRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+@Component
 public class DataInit {
-
+    @Bean
+    CommandLineRunner commandLineRunner(PersonRepository repository) {
+        Person person = new Person();
+        person.setName("John Smith");
+        return args -> {
+            repository.saveAll(List.of(person));
+        };
+    }
 }

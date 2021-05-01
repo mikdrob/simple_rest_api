@@ -1,6 +1,6 @@
 package com.example.practice.controller;
 
-import com.example.practice.repository.BaseRepository;
+import com.example.practice.repository.base.BaseRepository;
 import com.example.practice.service.BaseEntity;
 import com.example.practice.service.BaseService;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.example.practice.service;
 
-import com.example.practice.repository.BaseRepository;
+import com.example.practice.repository.base.BaseRepository;
 
 import javax.transaction.Transactional;
 import java.util.*;

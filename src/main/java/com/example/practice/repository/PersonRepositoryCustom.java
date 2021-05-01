@@ -1,6 +1,6 @@
 package com.example.practice.repository;
 
-import com.example.practice.dto.Person;
+import com.example.practice.api.dto.v1.Person;
 
 import java.util.List;
 

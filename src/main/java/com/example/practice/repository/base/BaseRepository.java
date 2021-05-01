@@ -1,4 +1,4 @@
-package com.example.practice.repository;
+package com.example.practice.repository.base;
 
 import com.example.practice.service.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,6 +1,6 @@
 package com.example.practice.service;
 
-import com.example.practice.dto.Person;
+import com.example.practice.api.dto.v1.Person;
 import com.example.practice.repository.PersonRepository;
 import org.springframework.stereotype.Component;
 
