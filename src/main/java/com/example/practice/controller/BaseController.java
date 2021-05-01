@@ -20,8 +20,8 @@ public abstract class BaseController<TEntity extends BaseEntity<TEntity>>{
         };
     }
     @GetMapping
-    public List<TEntity> getPerson() {
-        return service.getAll();
+    public ResponseEntity<List<TEntity>> getAll() {
+        return ResponseEntity.ok(service.getAll());
     }
 
     @PostMapping
