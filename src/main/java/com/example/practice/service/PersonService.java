@@ -9,18 +9,18 @@ import java.util.List;
 
 
 @Component
-public class PersonService {
+public class PersonService{
     private final PersonRepository personRepository;
 
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
-
-    @Transactional
     public List<Person> getPersonByName(String name) {
         return personRepository.getPersonByName(name);
     }
+
+
 
 
 }

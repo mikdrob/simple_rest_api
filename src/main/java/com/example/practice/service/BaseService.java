@@ -17,7 +17,6 @@ public abstract class BaseService<TEntity extends BaseEntity<TEntity>> {
         return baseRepository.findAll();
     }
 
-    @Transactional
     public TEntity Add(TEntity entity) {
         return baseRepository.save(entity);
     }

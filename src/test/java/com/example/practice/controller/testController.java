@@ -1,6 +1,7 @@
 package com.example.practice.controller;
 
 import com.example.practice.api.dto.v1.Person;
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
