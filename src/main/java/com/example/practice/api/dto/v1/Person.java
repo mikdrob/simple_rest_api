@@ -17,7 +17,6 @@ public class Person implements Serializable, BaseEntity<Person> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
     private Long id;
 
     @Lob

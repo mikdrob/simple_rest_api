@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 import java.util.*;
 
 
-public abstract class BaseService<TEntity extends BaseEntity<TEntity>> {
+public class BaseService<TEntity extends BaseEntity<TEntity>> {
     private final BaseRepository<TEntity> baseRepository;
 
     public BaseService(BaseRepository<TEntity> baseRepository) {

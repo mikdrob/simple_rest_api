@@ -3,6 +3,7 @@ package com.example.practice.controller;
 import com.example.practice.api.dto.v1.Person;
 import com.example.practice.repository.PersonRepository;
 import com.example.practice.service.PersonService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
