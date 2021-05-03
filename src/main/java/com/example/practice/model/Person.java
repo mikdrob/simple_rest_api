@@ -1,6 +1,5 @@
-package com.example.practice.api.dto.v1;
+package com.example.practice.model;
 
-import com.example.practice.service.BaseEntity;
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.Type;
@@ -13,7 +12,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
-public class Person implements Serializable, BaseEntity<Person> {
+public class Person implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

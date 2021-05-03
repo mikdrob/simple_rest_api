@@ -1,6 +1,6 @@
 package com.example.practice.repository;
 
-import com.example.practice.api.dto.v1.Person;
+import com.example.practice.model.Person;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;

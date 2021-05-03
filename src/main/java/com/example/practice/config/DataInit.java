@@ -1,6 +1,6 @@
 package com.example.practice.config;
 
-import com.example.practice.api.dto.v1.Person;
+import com.example.practice.model.Person;
 import com.example.practice.repository.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
