@@ -5,13 +5,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 
-@SpringBootTest
+
 class PracticeApplicationTests {
 
     	@Test
         void contextLoads() {
         }
-
-
 
 }

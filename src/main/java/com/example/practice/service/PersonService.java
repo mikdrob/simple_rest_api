@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Service
-public class PersonService{
+public class PersonService {
     private final PersonRepository personRepository;
 
     public PersonService(PersonRepository personRepository) {

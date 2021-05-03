@@ -8,14 +8,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class DataInit {
-    @Bean
-    CommandLineRunner commandLineRunner(PersonRepository repository) {
-        Person person = new Person();
-        person.setName("John Smith");
-        return args -> {
-            repository.saveAll(List.of(person));
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(PersonRepository repository) {
+//        Person person = new Person();
+//        person.setName("John Smith");
+//        return args -> {
+//            repository.saveAll(List.of(person));
+//        };
+//    }
 }

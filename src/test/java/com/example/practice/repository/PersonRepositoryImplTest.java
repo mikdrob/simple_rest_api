@@ -19,7 +19,7 @@ class PersonRepositoryImplTest {
     void getPersonByName() {
         // given
         Person person = new Person();
-        person.setName("John");
+        person.setName("John Smith");
         repository.save(person);
 
         // when

@@ -13,26 +13,27 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-class PersonServiceTest {
+class PersonServiceImplTest {
 
     @Mock
     private PersonRepository personRepository;
-    private PersonService underTest;
+    private PersonService testService;
 
     @BeforeEach
     void setUp(){
-        underTest = new PersonService(personRepository);
+        testService = new PersonService(personRepository);
     }
 
 
     @Test
     void canGetAll() {
         // when
-        underTest.GetAll();
+        testService.GetAll();
         // then
         verify(personRepository).findAll();
     }
 
+    // argument capture test
     @Test
     void canAdd() {
         // given
@@ -40,12 +41,13 @@ class PersonServiceTest {
         person.setName("John");
 
         // when
-        underTest.Add(person);
+        testService.Add(person);
 
         // then
         ArgumentCaptor<Person> personArgumentCaptor = ArgumentCaptor.forClass(Person.class);
         verify(personRepository).save(personArgumentCaptor.capture());
 
+        // making sure that an entity passed to service is the same the service will use to add a new record
         Person capturedPerson = personArgumentCaptor.getValue();
         assertThat(capturedPerson).isEqualTo(person);
     }

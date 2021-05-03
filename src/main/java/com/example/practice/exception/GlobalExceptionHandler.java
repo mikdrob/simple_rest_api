@@ -11,16 +11,15 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    // handling specific exception
+    // Handler for specific exceptions
     @ExceptionHandler(ResourceBadRequestException.class)
     public ResponseEntity<?> resourceNotFoundHandling(ResourceBadRequestException exception, WebRequest request){
         ErrorDetails errorDetails =
                 new ErrorDetails(new Date(), exception.getMessage(), request.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
-    // handling global exception
-
+    // Handler for global exceptions
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globalExceptionHandling(Exception exception, WebRequest request){
         ErrorDetails errorDetails =

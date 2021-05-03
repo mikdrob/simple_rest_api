@@ -19,6 +19,7 @@ import java.util.Collections;
 @Configuration
 public class SwaggerConfig {
 
+    // swagger config, defines scope and paths
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -29,6 +30,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo());
     }
 
+    // override of api info
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "My REST API",

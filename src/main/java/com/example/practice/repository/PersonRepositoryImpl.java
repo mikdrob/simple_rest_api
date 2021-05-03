@@ -3,6 +3,7 @@ package com.example.practice.repository;
 import com.example.practice.model.Person;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -10,27 +11,26 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonRepositoryImpl implements PersonRepositoryCustom {
+public class PersonRepositoryImpl implements PersonRepositoryCustom{
 
-    private final EntityManager em;
+    @PersistenceContext
+    EntityManager em;
 
-    public PersonRepositoryImpl(EntityManager em) {
-        this.em = em;
-    }
+    // custom method to get rid of sql with the help of jpa criteria
 
     @Override
     public List<Person> getPersonByName(String name) {
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Person> cq = cb.createQuery(Person.class);
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<Person> query = builder.createQuery(Person.class);
 
-        Root<Person> person = cq.from(Person.class);
+        Root<Person> person = query.from(Person.class);
         List<Predicate> predicates = new ArrayList<>();
 
         if (name != null) {
-            predicates.add(cb.like(person.get("name"), "%" + name + "%"));
+            predicates.add(builder.like(person.get("name"), "%" + name + "%"));
         }
-        cq.where(predicates.toArray(new Predicate[0]));
+        query.where(predicates.toArray(new Predicate[0]));
 
-        return em.createQuery(cq).getResultList();
+        return em.createQuery(query).getResultList();
     }
 }
