@@ -18,8 +18,9 @@ class PersonRepositoryImplTest {
     @Test
     void getPersonByName() {
         // given
+        String name = "John Smith";
         Person person = new Person();
-        person.setName("John Smith");
+        person.setName(name.toLowerCase());
         repository.save(person);
 
         // when

@@ -27,7 +27,7 @@ public class PersonRepositoryImpl implements PersonRepositoryCustom{
         List<Predicate> predicates = new ArrayList<>();
 
         if (name != null) {
-            predicates.add(builder.like(person.get("name"), "%" + name + "%"));
+            predicates.add(builder.like(person.get("name"), "%" + name.toLowerCase() + "%"));
         }
         query.where(predicates.toArray(new Predicate[0]));
 

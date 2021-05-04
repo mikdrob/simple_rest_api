@@ -20,7 +20,7 @@ public class PersonController {
     }
 
     @GetMapping("name")
-    public ResponseEntity<List<Person>> getPersonByName(@RequestParam String search){
+    public ResponseEntity<List<Person>> getPersonByName(@RequestParam(defaultValue = "siim") String search){
         return ResponseEntity.ok(service.getPersonByName(search));
     }
 

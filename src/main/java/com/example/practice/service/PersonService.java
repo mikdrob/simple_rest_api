@@ -23,8 +23,9 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public Person Add(Person entity) {
-        return personRepository.save(entity);
+    public Person Add(Person person) {
+        person.setName(person.getName().toLowerCase());
+        return personRepository.save(person);
     }
 
 
