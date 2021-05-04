@@ -6,8 +6,9 @@ Testing is done with in-memory H2 database.
 
 ## Setup
 Start the database server (PostgreSQL)
+Download jar file. This repo -> Actions -> Java CI with Maven -> maven-build-final -> github-actions-artifact
 
-Run the command:
+Unpack the downloaded archive and Run the command:
 
     java -jar practice-0.0.1-SNAPSHOT.jar
 
